@@ -21,6 +21,6 @@ repos:
     hooks:
     -   id: commit-check
         name: Check commit message
-        stages: [commit-msg, -commit-msg]
+        stages: [commit-msg, prepare-commit-msg]
         entry: 'bin/check_commit_message.py'
         language: script
