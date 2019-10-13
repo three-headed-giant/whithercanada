@@ -1,0 +1,38 @@
+name: CI
+
+on: [push, pull_request]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: [3.7, 3.8]
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Setup python
+      run: |
+        sudo add-apt-repository ppa:deadsnakes/nightly
+        sudo apt-get update
+        sudo apt-get install -y --no-install-recommends python${{ matrix.python }}-dev python${{ matrix.python }}-distutils
+
+    - name: Setup testing deps
+      run: |
+        python${{ matrix.python }} -m pip install setuptools
+        python${{ matrix.python }} -m pip install -r requirements-dev.txt
+
+    - name: Build
+      run: |
+        python${{ matrix.python }} -m pip install -e .
+
+    - name: Test
+      run: |
+        python${{ matrix.python }} -m pytest --cov --cov-report=xml
+
+    - name: Upload
+      uses: codecov/codecov-action@v1.0.2
+      with:
+        token: ${{secrets.codecov}}
