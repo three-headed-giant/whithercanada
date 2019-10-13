@@ -1,11 +1,7 @@
 {
-  "full_name": "Three Head Consulting",
-  "email": "isidentical@gmail.com",
-  "github_username": "thg-consulting",
-  "project_name": "Whiter Canada",
+  "project_name": "whithercanada",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
   "project_short_description": "Project starter template for THG.",
-  "pypi_username": "{{ cookiecutter.github_username }}",
   "_copy_without_render": [
     "*.yml"
   ]
