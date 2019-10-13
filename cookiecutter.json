@@ -5,5 +5,8 @@
   "project_name": "Whiter Canada",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
   "project_short_description": "Project starter template for THG.",
-  "pypi_username": "{{ cookiecutter.github_username }}"
+  "pypi_username": "{{ cookiecutter.github_username }}",
+  "_copy_without_render": [
+    "*.yml"
+  ]
 }
