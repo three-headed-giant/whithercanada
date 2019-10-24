@@ -1,0 +1,6 @@
+-   id: check_commit_message
+    name: Check commit message format
+    description: Check commit message format, prefixes.
+    entry: wc_check_commit_message
+    language: python
+    stages: [prepare-commit-msg]

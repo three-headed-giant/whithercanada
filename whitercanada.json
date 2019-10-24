@@ -1,0 +1,11 @@
+{
+    "commit_msg": {
+        "allow_merge": true,
+        "prefixes": [
+            "doc",
+            "core",
+            "misc",
+            "hooks"
+        ]
+    }
+}
